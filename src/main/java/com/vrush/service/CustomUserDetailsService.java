@@ -27,12 +27,12 @@ public class CustomUserDetailsService implements UserDetailsService {
          if(user==null){
              throw new UsernameNotFoundException("User not found with email"+username);
          }
-         //if user with username exists get role
+        //if user with username exists get role
         USER_ROLE role=user.getRole();
-         //default role is customer
-         List<GrantedAuthority> authorities=new ArrayList<>();
-          //adding roles inside authorities
-         authorities.add(new SimpleGrantedAuthority(role.toString()));
+        //default role is customer
+        List<GrantedAuthority> authorities=new ArrayList<>();
+        //adding roles inside authorities
+        authorities.add(new SimpleGrantedAuthority(role.toString()));
 //User class is provided by Spring Security which implements UserDetails interface hence we are returning
 // this object which is used to represent user details during authentication and authorization processes.
         return new org.springframework.security.core.userdetails.User(user.getEmail(),user.getPassword(),authorities);
