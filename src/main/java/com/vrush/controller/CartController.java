@@ -2,6 +2,7 @@ package com.vrush.controller;
 
 import com.vrush.model.Cart;
 import com.vrush.model.CartItem;
+import com.vrush.model.User;
 import com.vrush.request.AddCartItemRequest;
 import com.vrush.request.UpdateCartItemRequest;
 import com.vrush.service.CartService;
@@ -44,15 +45,16 @@ public class CartController {
     @GetMapping("/cart")
     public ResponseEntity<Cart> findUserCart(
             @RequestHeader("Authorization") String jwt) throws Exception {
-
-        Cart cart = cartService.findCartByUserId(jwt);
+        User user=userService.findUserByJwtToken(jwt);
+        Cart cart = cartService.findCartByUserId(user.getId());
         return ResponseEntity.ok(cart);
     }
 
     @PutMapping("/cart/clear")
     public ResponseEntity<Cart> clearCart(
             @RequestHeader("Authorization") String jwt) throws Exception {
-        Cart cart = cartService.clearCart(jwt);
+        User user=userService.findUserByJwtToken(jwt);
+        Cart cart = cartService.clearCart(user.getId());
         return new ResponseEntity<>(cart, HttpStatus.OK);
     }
 
