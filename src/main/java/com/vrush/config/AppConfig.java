@@ -40,7 +40,11 @@ public class AppConfig {
                 CorsConfiguration cfg=new CorsConfiguration();
                 //we can set front-end urls from which backend could be accessible
                 cfg.setAllowedOrigins(Arrays.asList(
-                        "http://localhost:3000"
+                        "http://localhost:3000",
+                        "https://food-rush.vercel.app/",
+                        "https://food-rush-vrushali-tambats-projects.vercel.app/",
+                       "https://food-rush-git-master-vrushali-tambats-projects.vercel.app/",
+                        "https://foodrush-backend-production.up.railway.app/"
                 ));
                 cfg.setAllowedMethods(Collections.singletonList("*"));
                 cfg.setAllowCredentials(true);

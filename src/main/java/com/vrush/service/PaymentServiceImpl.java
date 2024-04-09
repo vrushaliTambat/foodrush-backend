@@ -23,8 +23,8 @@ public class PaymentServiceImpl implements PaymentService{
                         SessionCreateParams.
                         PaymentMethodType.CARD)
                 .setMode(SessionCreateParams.Mode.PAYMENT)
-                .setSuccessUrl("http://localhost:3000/payment/success/"+order.getId())
-                .setCancelUrl("http://localhost:3000/payment/fail")
+                .setSuccessUrl("https://food-rush-vrushali-tambats-projects.vercel.app/payment/success/"+order.getId())
+                .setCancelUrl("https://food-rush-vrushali-tambats-projects.vercel.app/payment/fail")
                 .addLineItem(SessionCreateParams.LineItem.builder()
                         .setQuantity(1L).setPriceData(SessionCreateParams.LineItem.PriceData.builder()
                                 .setCurrency("usd")
