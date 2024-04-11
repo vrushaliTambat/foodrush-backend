@@ -43,6 +43,7 @@ public class AppConfig {
                         "http://localhost:3000",
                         "https://food-rush.vercel.app/",
                         "https://food-rush-vrushali-tambats-projects.vercel.app/",
+                       "https://food-rush-vrushali-tambats-projects.vercel.app",
                        "https://food-rush-git-master-vrushali-tambats-projects.vercel.app/",
                         "https://foodrush-backend-production.up.railway.app/"
                 ));
